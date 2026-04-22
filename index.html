@@ -181,6 +181,71 @@
         </div>
     </section>
 
+    <section style="min-height: 40vh;">
+        <div class="container" style="text-align: center;">
+            <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 03</p>
+            <hr style="border:none; height:5px; background:var(--accent-gold); width:120px; margin:30px auto;">
+            <h2>光学性能とシステム統合</h2>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="slide-title">光学透過率：可視光から近赤外までカバー</h2>
+            <div class="two-column" style="grid-template-columns: 1.2fr 1fr; gap: 60px;">
+                <div class="image-wrapper contain" style="border: none; box-shadow: none; background: transparent;">
+                    <img src="transmission.png" alt="光学透過率グラフ" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div>
+                    <h3>高い光利用効率とARコート</h3>
+                    <p>
+                        液体レンズは、産業用アプリケーションで求められる高い光学特性を備えています。標準モデル（A-25H0-AR）において、可視光域で**約97%**という極めて高い透過率を実現しています [cite: 5, 57, 85]。
+                    </p>
+
+                    <div class="tiled-box" style="border-left: 5px solid var(--primary-green);">
+                        <h4 style="margin: 0 0 10px 0; color: var(--primary-green);">
+                            <i class="fa-solid fa-layer-group"></i> 反射防止（AR）コーティング
+                        </h4>
+                        <ul style="font-size: 0.95rem; padding-left: 20px; margin: 0;">
+                            <li><strong>可視光用:</strong> 400nm〜700nmで最適化され、自然な色再現を可能にします [cite: 6, 99]。</li>
+                            <li><strong>近赤外（NIR）用:</strong> 700nm〜1100nmの波長に特化したモデルもラインナップし、夜間監視や生体認証に対応します [cite: 6, 110]。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="slide-title">AFシステム制御ループ：高速・低電力な統合</h2>
+            <div class="two-column" style="grid-template-columns: 1fr 1.2fr; gap: 60px;">
+                <div>
+                    <h3>閉ループ制御による高精度フォーカス</h3>
+                    <p>
+                        イメージセンサ、プロセッサ、ドライバICを組み合わせた閉ループ制御により、ミリ秒単位の高速AFを実現します [cite: 7, 111-126]。
+                    </p>
+
+                    <div class="tiled-box" style="background: #fff; border: 1px solid #e2e8f0;">
+                        <ul class="feature-list" style="font-size: 0.95rem;">
+                            <li><strong>通信方式:</strong> 標準的なI2C通信（400kHz等）を介してドライバICを制御 [cite: 7, 120, 22, 419]。</li>
+                            <li><strong>低消費電力:</strong> ドライバIC（MAX14574等）を含めた消費電力は**40mW未満**に抑制可能です [cite: 22, 421]。</li>
+                            <li><strong>電圧駆動:</strong> 2.8V〜5.5VのDC入力から、レンズ駆動用の高電圧AC信号（最大60V AC）を生成します [cite: 7, 120-122]。</li>
+                        </ul>
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; color: #666; font-style: italic; margin-top: 20px;">
+                        ※ 物理的な可動部が不要なため、システム全体の小型化と、5億回以上の動作寿命を両立します [cite: 10, 167]。
+                    </p>
+                </div>
+
+                <div class="image-wrapper contain" style="height: 500px; border: none; box-shadow: none; background: transparent;">
+                    <img src="system.png" alt="AFシステム制御ループ図" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section style="background-color: #fff;">
     <div class="container">
         <h2 class="slide-title">「暗さ」と「DoF」の物理的限界を打破</h2>
