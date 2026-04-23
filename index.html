@@ -83,22 +83,41 @@
 </head>
 <body>
 
-    <header style="
-    position: relative;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #0d4d4d 0%, #083333 100%); /* 深みのあるグリーン */
+<section style="
+    /* 基本の深緑（よりエメラルドに近い、深みのある色へ） */
+    background-color: #073838;
+    
+    /* 1. ソフトな中央ライティング（ビネット効果） */
+    /* 中央から外側に向かって緩やかに暗くなるグラデーションを重ね、視線を中央に集める */
+    background-image: radial-gradient(circle at center, rgba(13, 77, 77, 1) 0%, rgba(7, 43, 43, 1) 70%, rgba(4, 31, 31, 1) 100%),
+    
+    /* 2. 微細なメッシュパターン（エンジニアリング感と高級感） */
+    /* 画面全体に、ほぼ見えないほど微細なドットまたはラインのパターンを薄く重ねる */
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAyNSI+PHBhdGggZD0iTTAgMGgxdjFIMHogTTAgMmgxdjFIMHogTTIgMGgxdjFIMnogTTIgMmgxdjFIMnoiLz48L2c+PC9nPjwvc3ZnPg==');
+    
+    /* パターンの設定 */
+    background-size: auto, 12px 12px; /* ライティングは自動、パターンは細かく */
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-attachment: fixed; /* 画面スクロール時に背景を固定し、深みを強調 */
+    
+    /* レイアウトとタイポグラフィの調整 */
+    padding: 120px 20px;
     text-align: center;
-    overflow: hidden;
     font-family: 'Noto Sans JP', sans-serif;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
 ">
     <div style="
         position: absolute;
-        top: -50%;
+        top: -10%;
         left: -10%;
         width: 120%;
         height: 200%;
         background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
         pointer-events: none;
+        z-index: 1;
     "></div>
 
     <div style="position: relative; z-index: 2; max-width: 1000px; margin: 0 auto;">
@@ -116,7 +135,7 @@
 
         <h1 style="
             margin: 0;
-            color: #d4af37; /* ゴールド */
+            color: #d4af37; /* 彩度を抑えた、上品なゴールド */
             font-size: clamp(32px, 5vw, 56px);
             font-weight: 700;
             letter-spacing: 0.1em;
@@ -146,8 +165,8 @@
             border-radius: 2px;
         "></div>
     </div>
-</header>
-
+</section>
+   
     <section style="min-height: 40vh;">
         <div class="container" style="text-align: center;">
             <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 01</p>
