@@ -34,166 +34,93 @@
 
         .dark-section { background-color: var(--primary-green); color: var(--white); }
         .container { max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 20px; z-index: 2; }
-        .container-fluid { width: 100%; padding: 0; margin: 0; }
-
-        /* タイポグラフィ */
+        
         h1, h2, h3 { font-family: 'Urbanist', sans-serif; font-weight: 700; margin: 0; }
-        h1 { font-size: 64px; line-height: 1.1; margin-bottom: 20px; color: var(--white); }
-        .slide-title { font-size: 36px; margin-bottom: 40px; border-left: 12px solid var(--accent-gold); padding-left: 20px; color: var(--primary-green); }
-        .dark-section .slide-title { color: var(--white); }
-        h2 { font-size: 56px; margin-bottom: 20px; }
-        h3 { font-size: 28px; margin-bottom: 15px; color: #1e6b6b; }
-        .dark-section h3 { color: var(--accent-gold); }
+        h1 { font-size: clamp(32px, 5vw, 64px); line-height: 1.1; margin-bottom: 20px; color: var(--white); }
+        .slide-title { font-size: 32px; margin-bottom: 40px; border-left: 12px solid var(--accent-gold); padding-left: 20px; color: var(--primary-green); }
+        
+        .logo-box { background: white; padding: 20px; border-radius: 8px; display: inline-block; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; }
+        .logo-box img { height: 60px; width: auto; display: block; }
 
-        /* ロゴ */
-        .logo-box { background: white; padding: 20px; border-radius: 8px; display: inline-block; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .logo-box img { height: 80px; width: auto; }
-
-        /* グリッドシステム */
-        .row { display: flex; flex-wrap: wrap; width: 100%; margin: 0; }
-        .col-lg-4 { flex: 0 0 33.3333%; max-width: 33.3333%; padding: 0 40px; }
-        .col-lg-8 { flex: 0 0 66.6666%; max-width: 66.6666%; padding: 0; }
         .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-
-        /* パーツ */
         .tiled-box { background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; padding: 30px; margin-bottom: 20px; }
-        .image-wrapper { border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; width: 100%; height: 450px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .image-wrapper { border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; width: 100%; height: 450px; display: flex; align-items: center; justify-content: center; }
         .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
         .image-wrapper.contain img { object-fit: contain; padding: 20px; }
 
         .formula-box { background: #f1f5f9; border-radius: 8px; padding: 20px; border-left: 6px solid var(--primary-green); font-size: 24px; margin: 20px 0; font-family: 'Times New Roman', serif; }
-
         .spec-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         .spec-table th, .spec-table td { border: 1px solid #e0e0e0; padding: 15px; text-align: left; }
-        .spec-table th { background-color: #f8f9fa; width: 25%; color: #0056b3; }
-        
-        .highlight-box { background-color: #eef9fe; border: 1px solid #b3e5fc; padding: 20px; border-radius: 8px; margin: 30px 0; text-align: center; }
-        .highlight-text { display: block; font-size: 1.4rem; font-weight: bold; color: #d32f2f; margin-bottom: 10px; }
-
-        ul.feature-list { padding-left: 20px; }
-        ul.feature-list li { margin-bottom: 15px; }
+        .spec-table th { background-color: #f8f9fa; width: 30%; color: #0056b3; }
 
         @media (max-width: 992px) {
-            .col-lg-4, .col-lg-8, .two-column { flex: 0 0 100%; max-width: 100%; display: block; padding: 20px; }
+            .two-column { grid-template-columns: 1fr; }
             .image-wrapper { height: auto; }
-            h1 { font-size: 42px; }
-            h2 { font-size: 36px; }
         }
     </style>
 </head>
 <body>
 
-<section style="
-    /* 基本の深緑（よりエメラルドに近い、深みのある色へ） */
-    background-color: #073838;
-    
-    /* 1. ソフトな中央ライティング（ビネット効果） */
-    /* 中央から外側に向かって緩やかに暗くなるグラデーションを重ね、視線を中央に集める */
-    background-image: radial-gradient(circle at center, rgba(13, 77, 77, 1) 0%, rgba(7, 43, 43, 1) 70%, rgba(4, 31, 31, 1) 100%),
-    
-    /* 2. 微細なメッシュパターン（エンジニアリング感と高級感） */
-    /* 画面全体に、ほぼ見えないほど微細なドットまたはラインのパターンを薄く重ねる */
-    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAyNSI+PHBhdGggZD0iTTAgMGgxdjFIMHogTTAgMmgxdjFIMHogTTIgMGgxdjFIMnogTTIgMmgxdjFIMnoiLz48L2c+PC9nPjwvc3ZnPg==');
-    
-    /* パターンの設定 */
-    background-size: auto, 12px 12px; /* ライティングは自動、パターンは細かく */
-    background-repeat: no-repeat, repeat;
-    background-position: center;
-    background-attachment: fixed; /* 画面スクロール時に背景を固定し、深みを強調 */
-    
-    /* レイアウトとタイポグラフィの調整 */
-    padding: 120px 20px;
-    text-align: center;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-">
-   <section style="
-    background-color: #073838;
-    background-image: radial-gradient(circle at center, rgba(13, 77, 77, 1) 0%, rgba(7, 43, 43, 1) 70%, rgba(4, 31, 31, 1) 100%),
-    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAyNSI+PHBhdGggZD0iTTAgMGgxdjFIMHogTTAgMmgxdjFIMHogTTIgMGgxdjFIMnogTTIgMmgxdjFIMnoiLz48L2c+PC9nPjwvc3ZnPg==');
-    background-size: auto, 12px 12px;
-    background-repeat: no-repeat, repeat;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 120px 20px;
-    text-align: center;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-">
-    <div style="position: absolute; top: -10%; left: -10%; width: 120%; height: 200%; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%); pointer-events: none; z-index: 1;"></div>
-
-    <a href="https://nakajimakan14550.github.io/home/" style="
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        z-index: 10;
-        background: #ffffff;
-        padding: 10px 20px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        display: block;
-        transition: transform 0.2s;
-    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="logo.png" alt="CHRONIX" style="height: 40px; width: auto; display: block;">
-    </a>
-
-    <div style="position: relative; z-index: 2; max-width: 1000px; margin: 0 auto;">
-        <h1 style="
-            margin: 40px 0 0; /* ロゴが上に抜けた分、少し余白を調整 */
-            color: #d4af37;
-            font-size: clamp(32px, 5vw, 56px);
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            line-height: 1.3;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        ">
-            物理的限界と次世代光学戦略
-        </h1>
-
-        <p style="
-            margin: 30px auto 0;
-            color: #ffffff;
-            font-size: clamp(16px, 2.5vw, 22px);
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            opacity: 0.9;
-            max-width: 800px;
-        ">
-            液体レンズ(Varioptic) による高付加価値レトロフィットの提案
-        </p>
-
-        <div style="width: 60px; height: 3px; background: #d4af37; margin: 40px auto 0; border-radius: 2px;"></div>
-    </div>
-</section>
-   
-    <section style="min-height: 40vh;">
-        <div class="container" style="text-align: center;">
-            <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 01</p>
-            <hr style="border:none; height:5px; background:var(--accent-gold); width:120px; margin:30px auto;">
-            <h2>物理的障壁</h2>
+    <section style="
+        background-color: #073838;
+        background-image: radial-gradient(circle at center, rgba(13, 77, 77, 1) 0%, rgba(7, 43, 43, 1) 70%, rgba(4, 31, 31, 1) 100%),
+        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAyNSI+PHBhdGggZD0iTTAgMGgxdjFIMHogTTAgMmgxdjFIMHogTTIgMGgxdjFIMogTTIgMmgxdjFIMnoiLz48L2c+PC9nPjwvc3ZnPg==');
+        background-size: auto, 12px 12px;
+        background-repeat: no-repeat, repeat;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    ">
+        <div class="container">
+            <a href="https://nakajimakan14550.github.io/home/" class="logo-box">
+                <img src="logo.png" alt="CHRONIX">
+            </a>
+            <h1 style="color: #d4af37; text-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: 0.1em;">
+                物理的限界と次世代光学戦略
+            </h1>
+            <p style="color: #ffffff; font-size: clamp(18px, 2.5vw, 24px); font-weight: 300; opacity: 0.9; max-width: 800px; margin: 30px auto;">
+                液体レンズ(Varioptic) による高付加価値レトロフィットの提案
+            </p>
+            <div style="width: 60px; height: 3px; background: #d4af37; margin: 40px auto 0; border-radius: 2px;"></div>
         </div>
     </section>
 
-    <section style="padding: 0; background: #fff;">
-        <div class="container-fluid">
-            <div class="row" style="align-items: center;">
-                <div class="col-lg-4">
-                    <h2 class="slide-title">2nmノードが直面する致命的な壁</h2>
+    <section>
+        <div class="container">
+            <h2 class="slide-title">2nmノードが直面する致命的な壁</h2>
+            <div class="two-column">
+                <div>
                     <div class="tiled-box">
                         <h3>回折限界と微細化のジレンマ</h3>
-                        <p>回路線幅が原子数数十個分に達する先端ノードでは、光の波長が解像度を制限する「回折限界」が最大の敵となります。</p>
+                        <p>回路線幅が極限に達する先端ノードでは、光の波長そのものが解像度を制限します。</p>
                     </div>
                     <div class="tiled-box">
-                        <h3>3D構造とスループットの課題</h3>
-                        <p>HBMやチップレット等の3D積層により内部欠陥が隠蔽。これを高精度かつ高速にスキャンする能力が求められています。</p>
+                        <h3>3D構造とスループット</h3>
+                        <p>チップの立体化により内部欠陥の検査が困難に。高精度かつ高速なスキャンが不可欠です。</p>
                     </div>
                 </div>
-                <div class="col-lg-8">
-                    <img src="image_b9f4cf.png" alt="2nmノードの課題と解決" style="width: 100%; height: auto; display: block; box-shadow: -15px 0 35px rgba(0,0,0,0.1);">
+                <div class="image-wrapper">
+                    <img src="image_b9f4cf.png" alt="Semiconductor Inspection Analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="slide-title">液体レンズ：エレクトロウェッティングの原理</h2>
+            <div class="two-column">
+                <div class="image-wrapper contain">
+                    <img src="lens_structure.png" alt="Liquid Lens Structure">
+                </div>
+                <div>
+                    <p>電圧印加により液体界面の形を変化させ、ミリ秒単位でピントを調整。可動部がないため、摩耗も粉塵も発生しません。</p>
+                    <div class="formula-box">cos θ(V) = cos θ₀ + (ε₀εᵣ / 2dγ<sub>LV</sub>)V²</div>
                 </div>
             </div>
         </div>
@@ -201,590 +128,62 @@
 
     <section>
         <div class="container">
-            <h2 class="slide-title">液体レンズ：物理的構造と動作原理</h2>
+            <header style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: var(--primary-green);">Focal Sweep Mode</h2>
+                <p>セトリング時間をゼロにする高速撮像ソリューション</p>
+            </header>
             <div class="two-column">
-                <div>
-                    <h3>エレクトロウェッティングの原理</h3>
-                    <p>電圧印加により水溶液と油の境界面の形を変化させ、ミリ秒単位でピントを調整します。</p>
-                    <div class="formula-box">
-                        cos θ(V) = cos θ₀ + (ε₀εᵣ / 2dγ<sub>LV</sub>)V²
-                    </div>
-                    
-                    <ul class="feature-list">
-                        <li><strong>ISO Density（等密度）:</strong> 水と油の密度を等しくすることで重力の影響を排除。どの向きに設置しても光軸が中心に保たれます。</li>
-                        <li><strong>8極電極による高度な制御:</strong> 全ての電極に均等に電圧をかけフォーカスを制御。個別に電圧を調整することで、アスティグマズム（乱視）補正や光軸チルトも可能です。</li>
-                        <li><strong>可動部ゼロ:</strong> モーター等がないため粉塵が発生せず、クリーンルーム内での使用に最適です。</li>
-                    </ul>
+                <div class="tiled-box" style="border-left: 6px solid var(--accent-gold);">
+                    <h3>待機時間の完全排除</h3>
+                    <p>屈折力を流しながら連続撮影を行うため、スループットが劇的に向上。動きながら撮ってもボケない光学性能を維持します。</p>
                 </div>
                 <div class="image-wrapper contain">
-                    <img src="lens_structure.png" alt="液体レンズ構造図">
+                    <img src="sweep.png" alt="Focal Sweep Analysis">
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <h2 class="slide-title">主要スペック・メリット</h2>
-            <div class="two-column">
-                <div>
-                    <table class="spec-table">
-                        <tr>
-                            <th>超長寿命</th>
-                            <td>摩擦がないため、<strong>5億回以上</strong>のサイクルに耐えます。</td>
-                        </tr>
-                        <tr>
-                            <th>耐衝撃・振動</th>
-                            <td>物理的に動くレンズがなく、<strong>3300G / 0.25ms</strong>の試験をクリア。</td>
-                        </tr>
-                        <tr>
-                            <th>高速応答</th>
-                            <td>電圧制御のみで形状が変わる、極めて速い応答（Fast Focus）。</td>
-                        </tr>
-                        <tr>
-                            <th>低消費電力</th>
-                            <td>駆動電力はドライバICを含めても<strong>40mW未満</strong>。</td>
-                        </tr>
-                    </table>
-                    <div class="highlight-box">
-                        <span class="highlight-text">「動かない・壊れない・速い」</span>
-                        <p>ドローン、産業用ロボット、宇宙機などの過酷な環境で採用される決定的な理由です。</p>
-                    </div>
-                </div>
-                <div class="image-wrapper contain">
-                    <img src="merit.png" alt="メリット解説図">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="min-height: 40vh;">
-        <div class="container" style="text-align: center;">
-            <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 03</p>
-            <hr style="border:none; height:5px; background:var(--accent-gold); width:120px; margin:30px auto;">
-            <h2>光学性能とシステム統合</h2>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2 class="slide-title">光学透過率：可視光から近赤外までカバー</h2>
-            <div class="two-column" style="grid-template-columns: 1.2fr 1fr; gap: 60px;">
-                <div class="image-wrapper contain" style="border: none; box-shadow: none; background: transparent;">
-                    <img src="transmission.png" alt="光学透過率グラフ" style="width: 100%; height: 100%; object-fit: contain;">
-                </div>
-                <div>
-                    <h3>高い光利用効率とARコート</h3>
-                    <p>
-                        液体レンズは、産業用アプリケーションで求められる高い光学特性を備えています。標準モデル（A-25H0-AR）において、可視光域で**約97%**という極めて高い透過率を実現しています [cite: 5, 57, 85]。
-                    </p>
-
-                    <div class="tiled-box" style="border-left: 5px solid var(--primary-green);">
-                        <h4 style="margin: 0 0 10px 0; color: var(--primary-green);">
-                            <i class="fa-solid fa-layer-group"></i> 反射防止（AR）コーティング
-                        </h4>
-                        <ul style="font-size: 0.95rem; padding-left: 20px; margin: 0;">
-                            <li><strong>可視光用:</strong> 400nm〜700nmで最適化され、自然な色再現を可能にします [cite: 6, 99]。</li>
-                            <li><strong>近赤外（NIR）用:</strong> 700nm〜1100nmの波長に特化したモデルもラインナップし、夜間監視や生体認証に対応します [cite: 6, 110]。</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: #f8fafc;">
-        <div class="container">
-            <h2 class="slide-title">AFシステム制御ループ：高速・低電力な統合</h2>
-            <div class="two-column" style="grid-template-columns: 1fr 1.2fr; gap: 60px;">
-                <div>
-                    <h3>閉ループ制御による高精度フォーカス</h3>
-                    <p>
-                        イメージセンサ、プロセッサ、ドライバICを組み合わせた閉ループ制御により、ミリ秒単位の高速AFを実現します [cite: 7, 111-126]。
-                    </p>
-
-                    <div class="tiled-box" style="background: #fff; border: 1px solid #e2e8f0;">
-                        <ul class="feature-list" style="font-size: 0.95rem;">
-                            <li><strong>通信方式:</strong> 標準的なI2C通信（400kHz等）を介してドライバICを制御 [cite: 7, 120, 22, 419]。</li>
-                            <li><strong>低消費電力:</strong> ドライバIC（MAX14574等）を含めた消費電力は**40mW未満**に抑制可能です [cite: 22, 421]。</li>
-                            <li><strong>電圧駆動:</strong> 2.8V〜5.5VのDC入力から、レンズ駆動用の高電圧AC信号（最大60V AC）を生成します [cite: 7, 120-122]。</li>
-                        </ul>
-                    </div>
-                    
-                    <p style="font-size: 0.9rem; color: #666; font-style: italic; margin-top: 20px;">
-                        ※ 物理的な可動部が不要なため、システム全体の小型化と、5億回以上の動作寿命を両立します [cite: 10, 167]。
-                    </p>
-                </div>
-
-                <div class="image-wrapper contain" style="height: 500px; border: none; box-shadow: none; background: transparent;">
-                    <img src="system.png" alt="AFシステム制御ループ図" style="width: 100%; height: 100%; object-fit: contain;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweep Mode | Varioptic 液体レンズの核心技術</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary-green: #0d4d4d;
-            --accent-gold: #d4af37;
-            --text-dark: #1e293b;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Noto Sans JP', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .label {
-            display: inline-block;
-            background: var(--primary-green);
-            color: var(--accent-gold);
-            font-family: 'Urbanist', sans-serif;
-            font-weight: 700;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: clamp(32px, 5vw, 48px);
-            color: var(--primary-green);
-            margin: 0 0 20px 0;
-            line-height: 1.2;
-        }
-
-        .lead {
-            font-size: 18px;
-            color: #64748b;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* メインコンテンツエリア */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            align-items: start;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 850px) {
-            .content-grid { grid-template-columns: 1fr; }
-        }
-
-        /* 画像エリア */
-        .image-card {
-            background: var(--white);
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        .image-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .image-caption {
-            margin-top: 16px;
-            font-size: 14px;
-            color: #94a3b8;
-            text-align: center;
-        }
-
-        /* テキストエリア */
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-item {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            border-left: 6px solid var(--accent-gold);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .feature-item h3 {
-            margin: 0 0 8px 0;
-            font-size: 18px;
-            color: var(--primary-green);
-        }
-
-        .feature-item p {
-            margin: 0;
-            font-size: 15px;
-            color: #475569;
-        }
-
-        .highlight-box {
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .highlight-box h2 {
-            color: var(--accent-gold);
-            margin-top: 0;
-        }
-
-        .footer-note {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-
-        hr {
-            border: none;
-            height: 1px;
-            background: #e2e8f0;
-            margin: 40px 0;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <header>
-        <span class="label">CORE TECHNOLOGY</span>
-        <h1>Focal Sweep Mode</h1>
-        <p class="lead">屈折力の連続制御により「セトリング時間ゼロ」を実現する、液体レンズ独自の高速撮像ソリューション。</p>
-    </header>
-
-    <div class="content-grid">
-        <div class="image-card">
-            <img src="sweep.png" alt="Wavefront aberration measurement during focal sweeping">
-            <p class="image-caption">図：スウィープ動作中の屈折力変化(青)と波面収差(赤)の推移</p>
-            <div style="margin-top: 20px; padding: 15px; background: #f1f5f9; border-radius: 8px; font-size: 14px;">
-                <strong>グラフの解析：</strong> 屈折力が直線的に変化している最中でも、波面収差（赤線）が低く一定に保たれていることが分かります。これは「動きながら撮っても像がボケない」技術的証拠です。
-            </div>
-        </div>
-
-        <div class="feature-list">
-            <div class="feature-item">
-                <h3>待機時間の完全排除</h3>
-                <p>従来のモーター駆動のように「移動→静止」を待つ必要がありません。屈折力を流しながら連続撮影を行うため、スループットが劇的に向上します。</p>
-            </div>
-            <div class="feature-item">
-                <h3>全域ジャストピント</h3>
-                <p>無限遠から近距離までピントをスウィープさせながら画像を取得。あらゆる高さの対象物を一瞬で捉え、オンザフライで解析可能です。</p>
-            </div>
-            <div class="feature-item">
-                <h3>高度な光学品質の維持</h3>
-                <p>動作中も光学性能が安定しているため、2MP以上の高精細センサーのポテンシャルを100%引き出し、精緻なデコードを実現します。</p>
-            </div>
-            <div class="feature-item">
-                <h3>柔軟なパラメーター設定</h3>
-                <p>用途に応じ、スウィープの速度やピント範囲をソフトウェア上で自由に変更可能。検査ラインの仕様変更にも即座に対応します。</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="highlight-box">
-        <h2>物理の壁を、技術で超える。</h2>
-        <p>Variopticのスウィープモードは、物流・半導体検査・バイオメトリクスなど、スピードと精度が同時に求められる現場に革新をもたらします。</p>
-    </div>
-
-    <footer class="footer-note">
-        &copy; 2024 Chronix Inc. | Powered by Varioptic Technology
-    </footer>
-</div>
-
-</body>
-</html>
-    
-    <section style="background-color: #fff;">
-    <div class="container">
-        <h2 class="slide-title">「暗さ」と「DoF」の物理的限界を打破</h2>
-        <div class="two-column" style="grid-template-columns: 1.2fr 1fr; gap: 60px;">
-            <div class="image-wrapper contain" style="height: 500px; border: none; box-shadow: none;">
-                <img src="dof_comparison.png" alt="被写界深度の比較：従来 vs 液体レンズ" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
+    <section class="dark-section" style="background: radial-gradient(circle at center, #0d3d3d 0%, #051a1a 100%);">
+        <div class="container" style="max-width: 1000px; text-align: center;">
+            <h2 style="color: var(--accent-gold); margin-bottom: 10px;">JORYU AI Expert</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">製品仕様やスウィープモードに関するご質問にAIが回答いたします。</p>
             
-            <div>
-                <h3>明るさを保ったまま全域をカバー</h3>
-                <p>
-                    従来の光学系では、深い被写界深度（DoF）を得るために絞りを絞り込む必要があり、結果として画像が暗くなるという致命的な欠点がありました。
-                </p>
-
-                <div class="tiled-box" style="border-left: 5px solid #ccc; background: #f9f9f9;">
-                    <h4 style="margin-top:0; color:#666;">従来方式：静的なトレードオフ</h4>
-                    <p style="font-size: 0.95rem;">
-                        DoFを稼ぐために絞ると光量が不足。露光時間を延ばすと検査速度（スループット）が低下し、ゲインを上げるとノイズが増大します。
-                    </p>
-                </div>
-
-                <div class="tiled-box" style="border-left: 5px solid var(--accent-gold); background: #fdfbe7;">
-                    <h4 style="margin-top:0; color:var(--primary-green);">液体レンズ：動的な解決（フォーカススキャン）</h4>
-                    <p style="font-size: 0.95rem;">
-                        <strong>絞りを開放（明るい状態）</strong>したまま、ミリ秒単位でピント位置を高速スキャン。
-                        明るい画像のまま多点ピント撮影を行い、空間全体を瞬時に把握します。
-                    </p>
-                </div>
-
-                <ul class="feature-list" style="margin-top: 20px; font-size: 0.9rem; color: #444;">
-                    <li><i class="fa-solid fa-check" style="color:var(--accent-gold);"></i> <strong>スループット向上:</strong> Z軸の物理移動待ちをゼロ化</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--accent-gold);"></i> <strong>高S/N比:</strong> 潤沢な光量によるクリアな画質</li>
-                    <li><i class="fa-solid fa-check" style="color:var(--accent-gold);"></i> <strong>3Dデータ活用:</strong> 深度マップの取得も容易</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <section>
-    <div class="container">
-        <h2 class="slide-title">シビアなWD（5mm〜7mm）への至近距離解像</h2>
-        <div class="two-column" style="grid-template-columns: 1fr 1.2fr; gap: 60px;">
-            <div>
-                <h3>超近接領域での最高解像と柔軟性</h3>
-                <p>
-                    5mm〜7mmというシビアなWorking Distance (WD)は、物理的な干渉と解像度の維持が最も困難な領域です。
-                </p>
-
-                <div class="tiled-box">
-                    <h4 style="margin:0 0 10px 0; color:var(--primary-green);">
-                        <i class="fa-solid fa-microscope"></i> Extended Ring による最適化
-                    </h4>
-                    <p style="font-size: 0.95rem;">
-                        専用の延長リングにより屈折力範囲をマクロ領域へシフト。5mm近傍の微細な段差に対しても、液体レンズの分解能をフルに活用したピント合わせを可能にします。
-                    </p>
-                </div>
-
-                <div class="tiled-box">
-                    <h4 style="margin:0 0 10px 0; color:var(--primary-green);">
-                        <i class="fa-solid fa-ruler-combined"></i> テレセントリック設計の継承
-                    </h4>
-                    <p style="font-size: 0.95rem;">
-                        液体レンズを絞り近傍に配置することで、ピント調整時も倍率変動をゼロに抑制。計測精度を維持したまま高速スキャンを実現します。
-                    </p>
-                </div>
-            </div>
-
-            <div class="image-wrapper" style="height: 500px; border: none; box-shadow: none; background: transparent;">
-                <img src="microscope_setup.png" alt="マイクロ顕微鏡セットアップ" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section>
-    <div class="container">
-        <h2 class="slide-title">Corningの歴史と光学イノベーション</h2>
-        <div class="two-column" style="grid-template-columns: 1fr 1.2fr; gap: 30px;">
-            <div>
-                <ul class="feature-list" style="font-size: 1.1rem;">
-                    <li><strong>1879年 エジソンの電球:</strong> 白熱電球用のガラスバルブを開発し、照明の普及に貢献。</li>
-                    <li><strong>1915年 Pyrex:</strong> 耐熱ガラスの代名詞。世界中で愛されるブランドを確立。</li>
-                    <li><strong>2007年 Gorilla Glass:</strong> スマートフォンの普及を決定づけた高強度ガラス。</li>
-                    <li><strong>2017年 Varioptic買収:</strong> 液体レンズ技術を傘下に収め、光学デバイス分野をリード。</li>
-                </ul>
-                <p style="margin-top: 30px; font-weight: bold; color: var(--primary-green); border-top: 1px solid #ddd; padding-top: 20px;">
-                    170年以上の歴史を持つCorning社の信頼性が、Variopticの品質を支えています。
-                </p>
-            </div>
-            
-            <div class="image-wrapper" style="height: 500px; border: none; background: transparent; box-shadow: none;">
-                <img src="history.png" alt="Corning History" style="width: 100%; height: 100%; object-fit: contain; object-position: right center;">
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section style="background-color: #fff;">
-        <div class="container">
-            <h2 class="slide-title">まとめ：なぜ液体レンズが検査装置の救世主なのか</h2>
-            <p style="font-size: 18px; margin-bottom: 40px; color: #555;">
-                従来のメカニカルフォーカスでは不可能だった「超高速・超長寿命・高解像」の両立を、液体レンズが可動部なしで実現。半導体製造の最先端プロセスが抱える物理的限界を打破する、究極の光学ソリューションです。
-            </p>
-            <div class="image-wrapper" style="border: none; box-shadow: 0 15px 50px rgba(0,0,0,0.1);">
-                <img src="solution.png" alt="液体レンズが半導体検査装置の救世主になる理由（総合ソリューション図）" style="width: 70%; height: auto;">
-            </div>
-        </div>
-    </section>
-
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHRONIX | 物理的限界と次世代光学戦略</title>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary-green: #0d3d3d;
-            --accent-gold: #d4af37;
-            --text-dark: #1e293b;
-            --bg-light: #f8fafc;
-        }
-        body { margin: 0; font-family: 'Noto Sans JP', sans-serif; color: var(--text-dark); line-height: 1.6; }
-        
-        /* コンテナ定義 */
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
-        .container-narrow { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
-
-        section { width: 100%; padding: 100px 0; position: relative; overflow: hidden; }
-        
-        .slide-title { font-size: 36px; margin-bottom: 40px; border-left: 12px solid var(--accent-gold); padding-left: 20px; color: var(--primary-green); font-weight: 700; }
-        h2 { font-size: 56px; margin-bottom: 20px; font-weight: 700; }
-        
-        .two-column { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
-        .spec-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .spec-table th, .spec-table td { border: 1px solid #e2e8f0; padding: 15px; text-align: left; }
-        .spec-table th { background-color: #f1f5f9; width: 30%; }
-
-        /* 画像ラッパー */
-        .image-wrapper { border-radius: 12px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
-        .image-wrapper img { max-width: 100%; height: auto; }
-
-        .dark-section { 
-            background: radial-gradient(circle at center, #0d3d3d 0%, #051a1a 100%);
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
-
-    <section style="background: radial-gradient(circle at center, #0d3d3d 0%, #051a1a 100%); background-attachment: fixed;">
-        <div class="container-narrow" style="text-align: center;">
-            <div style="margin-bottom: 40px;">
-                <h2 style="color: var(--accent-gold); font-size: 32px; margin: 0;">AIテクニカルアシスタント</h2>
-                <p style="color: rgba(255,255,255,0.7); margin-top: 10px;">製品仕様やスウィープモードに関するご質問にAIが即座に回答いたします。</p>
-            </div>
-
             <div style="background: #ffffff; border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
                 <iframe 
                     src="https://script.google.com/macros/s/AKfycbwJ_jxa5hofpl5z1C1ZxrfrkGhqSf-dQLoRhFFW6EcKwjqoUH0J20LIYMyPPVySXri7/exec" 
-                    style="width: 100%; height: 850px; border: none; display: block;"
+                    style="width: 100%; height: 750px; border: none; display: block;"
                     allow="clipboard-write">
                 </iframe>
             </div>
-
-            <div style="margin-top: 30px; color: var(--accent-gold); font-weight: 700;">
-                <p>より詳しい説明や製品についてのお問い合わせ：03-5322-7191</p>
-                <p>メールアドレス：sales@chronix.co.jp</p>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: #ffffff; border-bottom: 1px solid #f1f5f9;">
-        <div class="container" style="text-align: center;">
-            <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 04</p>
-            <hr style="border:none; height:5px; background:var(--accent-gold); width:120px; margin:30px auto;">
-            <h2>製品ラインナップ</h2>
         </div>
     </section>
 
     <section>
         <div class="container">
-            <h2 class="slide-title">A-16F：シリーズ最小の超小型液体レンズ</h2>
+            <h2 class="slide-title">製品ラインナップ</h2>
             <div class="two-column">
                 <div>
-                    <h3 style="color: #1e6b6b; font-size: 24px;">超小型カメラへの統合に最適</h3>
-                    <p>
-                        Aシリーズの中で最小の液体レンズです。バーコードエンジン、産業用内視鏡、医療用デバイスなど、超小型カメラ向けに特別に設計されています。
-                    </p>
-                    <ul style="padding-left: 20px; color: #475569;">
-                        <li>主な特徴: 外径6.2mm、厚み1.85mm、有効径1.6mm</li>
-                        <li>焦点範囲: 5cmから無限遠まで対応</li>
-                        <li>高い光学品質: 透過率97%（@587nm）を達成</li>
-                    </ul>
+                    <h3>A-16F：シリーズ最小モデル</h3>
+                    <p>外径6.2mmの超小型設計。産業用内視鏡や医療デバイスに最適です。</p>
                     <table class="spec-table">
                         <tr><th>有効径</th><td>1.6 mm</td></tr>
-                        <tr><th>屈折力範囲</th><td>-5 ～ +15 ジオプタ</td></tr>
-                        <tr><th>波面収差</th><td>35 nm (rms)</td></tr>
+                        <tr><th>屈折力</th><td>-5 ～ +15 ジオプタ</td></tr>
                     </table>
                 </div>
-                <div class="image-wrapper" style="box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 40px;">
-                    <img src="product.png" alt="A-16F 液体レンズ仕様">
+                <div class="image-wrapper contain">
+                    <img src="product.png" alt="A-16F Product">
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background-color: #f8fafc;">
+    <footer style="background: #051a1a; color: #fff; padding: 60px 20px; text-align: center;">
         <div class="container">
-            <h2 class="slide-title">A-P シリーズ：簡単組込みパッケージ</h2>
-            <div class="two-column" style="grid-template-columns: 1.2fr 1fr;">
-                <div class="image-wrapper" style="padding: 40px; background: transparent;">
-                    <img src="product2.png" alt="A-P シリーズ製品ラインナップ">
-                </div>
-                <div>
-                    <h3 style="color: #1e6b6b; font-size: 24px;">FPC一体化による実装効率の向上</h3>
-                    <p>
-                        A-Pシリーズは、液体レンズをフレキシブルケーブル（FPC）と一体化することで、機械的・電気的な組み込みの手間を大幅に削減します。
-                    </p>
-                    <div style="background: #ffffff; border-radius: 12px; padding: 25px; border-left: 5px solid var(--accent-gold); box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                        <h4 style="margin: 0 0 15px 0;">ラインナップ別サイズ比較</h4>
-                        <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
-                            <tr style="border-bottom: 1px solid #eee;"><th style="padding: 8px 0; text-align: left;">モデル</th><th style="text-align: right;">厚み</th></tr>
-                            <tr><td style="padding: 8px 0;">A-16F0-P31</td><td style="text-align: right;">3.0 mm</td></tr>
-                            <tr><td style="padding: 8px 0;">A-P-25H0-33</td><td style="text-align: right;">2.8 mm</td></tr>
-                            <tr><td style="padding: 8px 0;">A-39N0-P37</td><td style="text-align: right;">5.2 mm</td></tr>
-                        </table>
-                    </div>
-                    <p style="margin-top: 20px; font-size: 0.95rem; color: #64748b;">
-                        <i class="fa-solid fa-microchip"></i> <strong>サーミスター内蔵:</strong> 温度変化に伴う屈折率の補正が可能です。
-                    </p>
-                </div>
-            </div>
+            <img src="logo.png" alt="CHRONIX" style="height: 50px; background: white; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+            <p>クロニクス株式会社 | www.chronix.co.jp</p>
         </div>
-    </section>
-
-    <section class="dark-section" style="text-align: center;">
-        <div class="container">
-            <h2 style="color: var(--accent-gold);">詳細資料ダウンロード</h2>
-            <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px;">製品カタログやシステム統合ガイドをPDFでご覧いただけます。</p>
-            <a href="#" style="display: inline-block; background-color: var(--accent-gold); color: #0d3d3d; padding: 20px 50px; border-radius: 50px; font-size: 20px; font-weight: bold; text-decoration: none;">
-                製品カタログをダウンロード
-            </a>
-            <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 24px; font-weight: bold; color: var(--accent-gold);">クロニクス株式会社</p>
-                <p>www.chronix.co.jp | 03-5322-7191</p>
-            </div>
-        </div>
-    </section>
+    </footer>
 
 </body>
 </html>
