@@ -109,33 +109,42 @@
     position: relative;
     overflow: hidden;
 ">
-    <div style="
+   <section style="
+    background-color: #073838;
+    background-image: radial-gradient(circle at center, rgba(13, 77, 77, 1) 0%, rgba(7, 43, 43, 1) 70%, rgba(4, 31, 31, 1) 100%),
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA0IDQiPjxnIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAyNSI+PHBhdGggZD0iTTAgMGgxdjFIMHogTTAgMmgxdjFIMHogTTIgMGgxdjFIMnogTTIgMmgxdjFIMnoiLz48L2c+PC9nPjwvc3ZnPg==');
+    background-size: auto, 12px 12px;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 20px;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+">
+    <div style="position: absolute; top: -10%; left: -10%; width: 120%; height: 200%; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+
+    <a href="https://nakajimakan14550.github.io/home/" style="
         position: absolute;
-        top: -10%;
-        left: -10%;
-        width: 120%;
-        height: 200%;
-        background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: 1;
-    "></div>
+        top: 30px;
+        left: 30px;
+        z-index: 10;
+        background: #ffffff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        display: block;
+        transition: transform 0.2s;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="logo.png" alt="CHRONIX" style="height: 40px; width: auto; display: block;">
+    </a>
 
     <div style="position: relative; z-index: 2; max-width: 1000px; margin: 0 auto;">
-        
-        <div style="
-            display: inline-block;
-            background: #ffffff;
-            padding: 20px 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 50px;
-        ">
-            <img src="logo.png" alt="CHRONIX" style="height: 60px; width: auto; display: block;">
-        </div>
-
         <h1 style="
-            margin: 0;
-            color: #d4af37; /* 彩度を抑えた、上品なゴールド */
+            margin: 40px 0 0; /* ロゴが上に抜けた分、少し余白を調整 */
+            color: #d4af37;
             font-size: clamp(32px, 5vw, 56px);
             font-weight: 700;
             letter-spacing: 0.1em;
@@ -157,13 +166,7 @@
             液体レンズ(Varioptic) による高付加価値レトロフィットの提案
         </p>
 
-        <div style="
-            width: 60px;
-            height: 3px;
-            background: #d4af37;
-            margin: 40px auto 0;
-            border-radius: 2px;
-        "></div>
+        <div style="width: 60px; height: 3px; background: #d4af37; margin: 40px auto 0; border-radius: 2px;"></div>
     </div>
 </section>
    
