@@ -640,70 +640,117 @@
     </section>
 
 
- <section style="
-    margin: 40px auto; 
-    max-width: 1000px; 
-    padding: 60px 30px; 
-    background: rgba(255, 255, 255, 0.03); 
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 32px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3); 
+ <div style="
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
     font-family: 'Noto Sans JP', sans-serif;
-    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 ">
-    
-    <div style="margin-bottom: 40px; padding-left: 10px;">
-        <div style="background: #d4af37; height: 3px; width: 60px; margin-bottom: 20px;"></div>
-        <h2 style="margin: 0; color: #ffffff; font-size: 32px; font-weight: 700; letter-spacing: 0.05em;">AIテクニカルアシスタント</h2>
-        <p style="margin: 15px 0 0; color: rgba(255, 255, 255, 0.7); font-size: 16px;">
-            製品仕様やスウィープモードに関するご質問にAIが即座に回答いたします。
-        </p>
-    </div>
-
     <div style="
-        position: relative; 
-        width: 100%; 
-        height: 880px; 
-        overflow: hidden; 
-        border-radius: 20px; 
-        background: #ffffff; 
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
-        margin-bottom: 45px;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        padding: 30px 40px 20px;
+        text-align: center;
+        border-bottom: 1px solid #e2e8f0;
     ">
-        <iframe 
-            src="https://script.google.com/macros/s/AKfycbwJ_jxa5hofpl5z1C1ZxrfrkGhqSf-dQLoRhFFW6EcKwjqoUH0J20LIYMyPPVySXri7/exec" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-            allow="clipboard-write">
-        </iframe>
-    </div>
-
-    <div style="
-        padding: 30px; 
-        background: rgba(255, 255, 255, 0.05); 
-        border-radius: 20px; 
-        border-left: 4px solid #d4af37;
-    ">
-        <p style="margin: 0 0 20px; font-weight: 700; color: #d4af37; font-size: 18px;">
-            より詳しい説明や製品についてのお問い合わせ
-        </p>
-        
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; color: #ffffff; font-size: 18px;">
-            <div style="display: flex; align-items: center;">
-                <span style="color: #d4af37; font-weight: 700; margin-right: 12px; font-size: 14px; letter-spacing: 0.1em;">TEL</span>
-                <span style="letter-spacing: 0.05em; font-weight: 500;">03-5322-7191</span>
-            </div>
-            
-            <div style="display: flex; align-items: center;">
-                <span style="color: #d4af37; font-weight: 700; margin-right: 12px; font-size: 14px; letter-spacing: 0.1em;">E-Mail</span>
-                <a href="mailto:sales@chronix.co.jp" style="color: #ffffff; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: 0.3s;">
-                    sales@chronix.co.jp
-                </a>
-            </div>
+        <div style="display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 10px;">
+            <span style="background: #10b981; color: white; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer;">JP</span>
+            <span style="border: 1px solid #e2e8f0; color: #64748b; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; background: white;">EN</span>
         </div>
+        <h2 style="
+            margin: 0;
+            color: #10b981;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        ">
+            JORYU AI Expert
+        </h2>
     </div>
-</section>
+
+    <div style="padding: 40px;">
+        
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; font-weight: 700; color: #334155; margin-bottom: 10px; font-size: 15px;">製品カテゴリー</label>
+            <select style="
+                width: 100%;
+                padding: 14px 16px;
+                border-radius: 12px;
+                border: 1.5px solid #e2e8f0;
+                background-color: #f8fafc;
+                font-size: 15px;
+                color: #475569;
+                appearance: none;
+                background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E');
+                background-repeat: no-repeat;
+                background-position: right 15px center;
+                background-size: 18px;
+            ">
+                <option>選択してください / Select Category</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; font-weight: 700; color: #334155; margin-bottom: 10px; font-size: 15px;">ご質問内容</label>
+            <textarea placeholder="具体的な状況を入力してください" style="
+                width: 100%;
+                height: 120px;
+                padding: 14px 16px;
+                border-radius: 12px;
+                border: 1.5px solid #e2e8f0;
+                background-color: #f8fafc;
+                font-size: 15px;
+                resize: none;
+                box-sizing: border-box;
+            "></textarea>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; font-weight: 700; color: #334155; margin-bottom: 10px; font-size: 15px;">ユーザー名 / 会社名</label>
+            <input type="text" placeholder="任意：山田 太郎 / 株式会社JORYU" style="
+                width: 100%;
+                padding: 14px 16px;
+                border-radius: 12px;
+                border: 1.5px solid #e2e8f0;
+                background-color: #f8fafc;
+                font-size: 15px;
+                box-sizing: border-box;
+            ">
+        </div>
+
+        <div style="margin-bottom: 40px;">
+            <label style="display: block; font-weight: 700; color: #334155; margin-bottom: 10px; font-size: 15px;">回答の送付先メールアドレス</label>
+            <input type="email" placeholder="任意：example@joryu.co.jp" style="
+                width: 100%;
+                padding: 14px 16px;
+                border-radius: 12px;
+                border: 1.5px solid #e2e8f0;
+                background-color: #f8fafc;
+                font-size: 15px;
+                box-sizing: border-box;
+            ">
+        </div>
+
+        <button style="
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to right, #10b981, #059669);
+            color: #ffffff;
+            border: none;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            transition: 0.3s;
+        ">
+            AI回答を取得
+        </button>
+    </div>
+</div>
     
 
     <section style="min-height: 40vh; background-color: #fff;">
