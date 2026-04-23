@@ -450,58 +450,79 @@
 </body>
 </html>
 
- <section style="background: #ffffff; padding: 100px 0;">
-        <div class="container">
-            <h2 class="slide-title">「暗さ」と「DoF」の物理的限界を打破</h2>
-            
-            <div class="two-column" style="grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start;">
-                <div>
-                    <div class="image-wrapper contain" style="border: none; box-shadow: none; background: transparent; margin-bottom: 30px;">
-                        <img src="dof_comparison.png" alt="DoF比較" style="width: 100%; height: auto;">
-                    </div>
-                    
-                    <div class="tiled-box" style="border-left: 5px solid var(--accent-gold); background: #fdfbe7; padding: 25px;">
-                        <h4 style="color:var(--primary-green); margin-top: 0; font-size: 1.2rem;">
-                            <i class="fa-solid fa-microscope" style="margin-right: 10px;"></i>
-                            液体レンズ：フォーカススキャン
-                        </h4>
-                        <p style="font-size: 0.95rem; line-height: 1.7; color: #334155;">
-                            絞りを開放したまま、ms単位でピント位置を高速スキャン（V-sweep）。明るい画像のまま多点撮影を行い、空間全体を瞬時にジャストピントで捉えます 。2MP以上の高精細センサーのポテンシャルを100%引き出し、高速・高精度なAFを実現します [cite: 54]。
-                        </p>
-                    </div>
+
+<section style="padding: 100px 20px; background: #ffffff; font-family: 'Noto Sans JP', sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="margin-bottom: 50px;">
+            <h2 style="color: #0d4d4d; border-left: 8px solid #d4af37; padding-left: 20px; font-size: 32px; font-weight: 700;">「暗さ」と「DoF」の物理的限界を打破</h2>
+        </div>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+            <div style="flex: 1.1; min-width: 380px;">
+                <div style="position: relative; background: #f8fafc; border-radius: 20px; padding: 20px;">
+                    <img src="dof_comparison.png" alt="DoF比較" style="width: 100%; height: auto; border-radius: 10px;">
+                    <p style="text-align: center; font-size: 13px; color: #94a3b8; margin-top: 15px;">※絞り込みによる光量不足と液体レンズの比較イメージ</p>
                 </div>
+            </div>
 
-                <div>
-                    <h3 style="color: var(--primary-green); margin-top: 0;">空間スキャンの新思想：CT断面撮像</h3>
-                    <p style="color: #475569; font-size: 1rem; line-height: 1.8;">
-                        液体レンズは「スライス画像」を高速に連写し、ボケを排除して合成します。これにより、手前から奥まで全域ジャストピントの「空間データ」を生成します [cite: 60]。
-                    </p>
-
-                    <div style="margin-top: 30px;">
-                        <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
-                            <h4 style="margin: 0 0 10px 0; color: var(--primary-green); display: flex; align-items: center;">
-                                <span style="background: var(--accent-gold); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-right: 10px;">1</span>
-                                空間の完全把握
-                            </h4>
-                            <p style="margin: 0; font-size: 0.9rem; color: #64748b;">CTスキャンのように空間を完全に把握することが可能になり、従来の静止したピント合わせでは不可能だった検査領域をカバーします [cite: 61]。</p>
-                        </div>
-
-                        <div style="background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0;">
-                            <h4 style="margin: 0 0 10px 0; color: var(--primary-green); display: flex; align-items: center;">
-                                <span style="background: var(--accent-gold); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; margin-right: 10px;">2</span>
-                                3D積層検査（HBM等）
-                            </h4>
-                            <p style="margin: 0; font-size: 0.9rem; color: #64748b;">HBM等の積層内部の欠陥を特定。各層の断面を瞬時に切り取る「超高速DoF切り替え」が、新たな検査価値を創造します [cite: 63, 65]。</p>
-                        </div>
-                    </div>
-
-                    <p style="margin-top: 30px; font-weight: bold; color: #ef4444; font-size: 0.95rem;">
-                        <i class="fa-solid fa-circle-exclamation"></i> 従来方式：DoFを稼ぐために絞ると画像が暗くなり、スループットが劇的に低下します 。
+            <div style="flex: 0.9; min-width: 350px;">
+                <h3 style="color: #0d4d4d; font-size: 24px; margin-bottom: 25px; line-height: 1.4;">明るさを保ったまま<br>全域をカバーする</h3>
+                <p style="line-height: 1.8; color: #475569; font-size: 16px;">
+                    従来の光学系では、DoF（被写界深度）を得るために「絞り込む」必要があり、結果として画像が暗くなる致命的な欠点がありました。これは露光時間の延長を招き、スループットを劇的に低下させます。
+                </p>
+                <div style="background: #fdfbe7; padding: 30px; border-radius: 16px; border-left: 6px solid #d4af37; margin-top: 30px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);">
+                    <strong style="color: #0d4d4d; font-size: 19px; display: block; margin-bottom: 12px;">液体レンズ：フォーカススキャン</strong>
+                    <p style="margin: 0; font-size: 15px; color: #4a5568; line-height: 1.7;">
+                        絞りを開放したまま、ms単位でピント位置を高速スキャン（V-sweep）。明るさを犠牲にせず、空間全体を瞬時に把握。2MP以上の高精細センサーの性能を極限まで引き出します。
                     </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section style="padding: 100px 20px; background: #f1f5f9; font-family: 'Noto Sans JP', sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+        <div style="text-align: left; margin-bottom: 60px;">
+            <h2 style="color: #0d4d4d; font-size: 32px; font-weight: 700; margin-bottom: 20px;">空間スキャンの新思想：CT断面撮像</h2>
+            <p style="font-size: 18px; color: #64748b; max-width: 800px; line-height: 1.8;">
+                液体レンズは「スライス画像」を高速連写し、ボケを排除して合成することで、手前から奥まで全域ジャストピントの「空間データ」を生成します。
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px;">
+            <div style="background: #ffffff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -10px; right: -10px; font-size: 100px; color: #f8fafc; font-weight: 900; z-index: 1;">01</div>
+                <div style="position: relative; z-index: 2;">
+                    <div style="background: #d4af37; color: #fff; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-weight: bold;">1</div>
+                    <h4 style="color: #0d4d4d; font-size: 22px; margin-bottom: 15px;">空間の完全把握</h4>
+                    <p style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0;">
+                        CTスキャンのように空間を完全に把握することが可能。従来の「静止したピント合わせ」では不可能だった、広範な検査領域と高密度なデータ収集を両立します。
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: #ffffff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -10px; right: -10px; font-size: 100px; color: #f8fafc; font-weight: 900; z-index: 1;">02</div>
+                <div style="position: relative; z-index: 2;">
+                    <div style="background: #0d4d4d; color: #fff; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-weight: bold;">2</div>
+                    <h4 style="color: #0d4d4d; font-size: 22px; margin-bottom: 15px;">3D積層検査（HBM等）</h4>
+                    <p style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0;">
+                        2nmノード以降のHBM等、積層内部の欠陥特定に威力を発揮。各層の断面を瞬時に切り取る「超高速DoF切り替え」が、次世代ファブの歩留まり向上の決定打となります。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center; color: #ef4444; font-weight: 700; font-size: 15px;">
+            物理駆動がないからこそ可能な「超高速DoF切り替え」が、新たな検査価値を創造します。
+        </div>
+    </div>
+</section>
+
+
+
+    
     <section>
         <div class="container">
             <h2 class="slide-title">シビアなWD（5mm〜7mm）への至近距離解像</h2>
