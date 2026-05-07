@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary-green: #073838;
+            --primary-green: #073838; /* より洗練された深緑 */
             --light-green: #0d4d4d;
             --accent-gold: #d4af37;
             --text-dark: #334155;
@@ -21,6 +21,7 @@
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Noto Sans JP', sans-serif; color: var(--text-dark); background-color: #f1f5f9; line-height: 1.6; }
 
+        /* 洗練されたグリーン背景の共通定義 */
         .sophisticated-green {
             background-color: var(--primary-green);
             background-image: 
@@ -43,186 +44,366 @@
         }
 
         .container { max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 20px; z-index: 2; }
-        
+        .container-fluid { width: 100%; padding: 0; margin: 0; }
+
+        /* タイポグラフィ */
         h1, h2, h3 { font-family: 'Urbanist', 'Noto Sans JP', sans-serif; font-weight: 700; margin: 0; }
-        h1 { font-size: clamp(32px, 5vw, 64px); line-height: 1.2; color: var(--accent-gold); text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        h1 { font-size: clamp(32px, 5vw, 64px); line-height: 1.2; color: var(--accent-gold); text-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: 0.05em; }
         .slide-title { font-size: 36px; margin-bottom: 40px; border-left: 12px solid var(--accent-gold); padding-left: 20px; color: var(--light-green); }
         .sophisticated-green .slide-title { color: var(--white); }
         h2 { font-size: clamp(28px, 4vw, 56px); margin-bottom: 20px; }
-        h3 { font-size: 24px; margin-bottom: 15px; color: #1e6b6b; }
+        h3 { font-size: 28px; margin-bottom: 15px; color: #1e6b6b; }
         .sophisticated-green h3 { color: var(--accent-gold); }
 
         .logo-box { background: white; padding: 20px 40px; border-radius: 12px; display: inline-block; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); text-decoration: none; }
         .logo-box img { height: 60px; width: auto; display: block; }
 
-        /* 液体レンズ解説セクション */
-        .liquid-lens-guide {
-            background-color: rgba(6, 38, 33, 0.6);
-            backdrop-filter: blur(10px);
-            padding: 50px 30px;
-            border-radius: 20px;
-            margin-top: 30px;
-            color: #e0e0e0;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            text-align: left;
+        .row { display: flex; flex-wrap: wrap; width: 100%; margin: 0; }
+        .col-lg-4 { flex: 0 0 33.3333%; max-width: 33.3333%; padding: 0 40px; }
+        .col-lg-8 { flex: 0 0 66.6666%; max-width: 66.6666%; padding: 0; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+        .tiled-box { background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; padding: 30px; margin-bottom: 20px; }
+        .image-wrapper { border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; width: 100%; height: 450px; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .image-wrapper.contain img { object-fit: contain; padding: 20px; }
+
+        .formula-box { background: #f1f5f9; border-radius: 8px; padding: 20px; border-left: 6px solid #1e6b6b; font-size: 24px; margin: 20px 0; font-family: 'Times New Roman', serif; }
+        .spec-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .spec-table th, .spec-table td { border: 1px solid #e0e0e0; padding: 15px; text-align: left; }
+        .spec-table th { background-color: #f8f9fa; width: 30%; color: #0056b3; }
+
+        .highlight-box { background-color: #eef9fe; border: 1px solid #b3e5fc; padding: 30px; border-radius: 12px; margin: 30px 0; text-align: center; }
+        .highlight-text { display: block; font-size: 1.5rem; font-weight: bold; color: #d32f2f; margin-bottom: 10px; }
+
+        ul.feature-list { padding-left: 20px; list-style-type: square; }
+        ul.feature-list li { margin-bottom: 12px; }
+
+        .ai-assistant-card {
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 32px; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+            padding: 60px 40px;
         }
-        .ll-vs {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        .vs-item { text-align: center; flex: 1; }
-        .vs-item span { display: block; font-size: 0.8rem; color: #aaa; margin-bottom: 5px; }
-        .vs-item b { font-size: 1.1rem; color: #fff; }
-        .vs-sep { font-weight: bold; color: var(--accent-gold); font-size: 1.2rem; padding: 0 10px; }
-        .ll-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .ll-card { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border-bottom: 3px solid var(--accent-gold); }
-
-        /* 比較戦略カード */
-        .st-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .st-card { padding: 30px; border-radius: 20px; background: var(--bg-light); border: 1px solid #e2e8f0; }
-        .st-card.good { border-top: 6px solid #10b981; background: #f0fdf4; }
-        .st-card.bad { border-top: 6px solid #64748b; }
-        .st-list { list-style: none; padding: 0; }
-        .st-list li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95rem; }
-        .bad .st-list li::before { content: '\f00d'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: #ef4444; }
-        .good .st-list li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: #10b981; }
-
-        /* センサー比較 */
-        .comp-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .comp-table th, .comp-table td { padding: 20px; border: 1px solid #e2e8f0; text-align: center; }
-        .comp-table th { background: #1e293b; color: white; }
-        .label-col { background: #f8fafc; font-weight: bold; width: 20%; }
-
-        img { cursor: pointer; transition: transform 0.3s ease; }
-        img:hover { transform: scale(1.02); }
 
         @media (max-width: 992px) {
-            .st-comparison { grid-template-columns: 1fr; }
+            .col-lg-4, .col-lg-8, .two-column { flex: 0 0 100%; max-width: 100%; display: block; padding: 20px; }
+            .image-wrapper { height: auto; }
+            h1 { font-size: 38px; }
+            h2 { font-size: 32px; }
+        }
+
+        /* 画像拡大機能のスタイル追加 */
+        img { cursor: pointer; transition: opacity 0.3s ease; }
+        img:hover { opacity: 0.9; }
+
+        #lightbox-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
-    <header class="sophisticated-green" style="padding: 100px 0; text-align: center; min-height: 100vh; display: flex; align-items: center;">
+    <!-- ライトボックス用要素 -->
+    <div id="lightbox-overlay">
+        <img id="lightbox-image" src="" alt="拡大画像">
+    </div>
+
+    <header class="sophisticated-green" style="padding: 120px 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%); pointer-events: none;"></div>
+        
         <div class="container">
-            <a href="https://nakajimakan14550.github.io/home/" class="logo-box">
+            <a href="https://nakajimakan14550.github.io/home/" class="logo-box" style="position: relative; z-index: 10;">
                 <img src="logo.png" alt="CHRONIX">
             </a>
 
-            <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.3); padding: 60px 40px; border-radius: 32px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 30px 60px rgba(0,0,0,0.4); max-width: 1000px; margin: 0 auto;">
-                <h1>物理的限界と次世代光学戦略</h1>
-                <p style="margin: 25px 0; font-size: 22px; color: #ffffff; font-weight: 300;">液体レンズ(Varioptic) による高付加価値レトロフィットの提案</p>
+            <div style="
+                margin-top: 50px;
+                background: rgba(255, 255, 255, 0.08); 
+                border: 1px solid rgba(255, 255, 255, 0.3); 
+                padding: 50px 40px; 
+                border-radius: 24px; 
+                display: inline-block; 
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+                max-width: 900px;
+            ">
+                <h1 style="margin: 0; color: #d4af37; text-shadow: 0 2px 15px rgba(0,0,0,0.6);">
+                    物理的限界と次世代光学戦略
+                </h1>
+                
+                <p style="
+                    margin: 25px 0 0; 
+                    font-size: clamp(18px, 2.5vw, 22px); 
+                    color: #ffffff; 
+                    font-weight: 300;
+                    letter-spacing: 0.05em;
+                    line-height: 1.6;
+                ">
+                    液体レンズ(Varioptic) による高付加価値レトロフィットの提案
+                </p>
 
-                <section class="liquid-lens-guide">
-                    <div class="ll-header" style="text-align: center; margin-bottom: 30px;">
-                        <h2 style="color: var(--accent-gold); font-size: 24px;">レンズを「動かす」から「変える」へ</h2>
-                    </div>
-                    <div class="ll-vs">
-                        <div class="vs-item"><span>固定レンズ</span><b>メガネの「かけ替え」</b></div>
-                        <div class="vs-sep">VS</div>
-                        <div class="vs-item"><span>液体レンズ</span><b>人間の「目の動き」</b></div>
-                    </div>
-                    <div class="ll-grid">
-                        <div class="ll-card"><h3>⚡ 爆速合焦</h3><p style="font-size: 0.85rem;">1/100秒以下のスピードでピント調整。高速ラインを止めません。</p></div>
-                        <div class="ll-card"><h3>🛡️ 高耐久</h3><p style="font-size: 0.85rem;">可動部ゼロ。摩耗による粉塵が出ずクリーンルームに最適。</p></div>
-                        <div class="ll-card"><h3>🤏 超小型</h3><p style="font-size: 0.85rem;">モーター不要。省スペースで装置のレトロフィットが可能。</p></div>
-                    </div>
-                </section>
+                <div style="width: 60px; height: 3px; background: #d4af37; margin: 30px auto 0; border-radius: 2px;"></div>
             </div>
         </div>
     </header>
 
-    <section id="section01">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <p style="font-size: 24px; color: #1e6b6b; font-weight: bold; margin: 0;">Section 01</p>
-                <hr style="border:none; height:4px; background:var(--accent-gold); width:80px; margin:20px auto;">
-                <h2 style="color: var(--primary-green);">微細化が招く「光学的な絶望」</h2>
-            </div>
+    <section style="min-height: 40vh;">
+        <div class="container" style="text-align: center;">
+            <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 01</p>
+            <hr style="border:none; height:5px; background:var(--accent-gold); width:120px; margin:30px auto;">
+            <h2>物理的障壁</h2>
+        </div>
+    </section>
 
-            <div class="st-comparison">
-                <div class="st-card bad">
-                    <h3>従来の固定レンズの限界</h3>
-                    <ul class="st-list">
-                        <li><b>ピントが「薄すぎる」:</b> 倍率を上げるとピント範囲が数ミクロンになり、段差のある3D構造が見えない。</li>
-                        <li><b>物理的な遅延:</b> モーターでレンズを動かす時間がボトルネックとなり、スループットが低下。</li>
-                        <li><b>発塵リスク:</b> メカ駆動による摩擦で微小なゴミが発生し、歩留まりを悪化させる。</li>
-                    </ul>
-                </div>
-                <div class="st-card good">
-                    <h3>次世代：液体レンズの戦略</h3>
-                    <ul class="st-list">
-                        <li><b>全階層スキャン:</b> 電気信号で液体の形を変え、瞬時に上層から下層までピントを切り替える。</li>
-                        <li><b>振動への耐性:</b> 駆動部がないため外部振動に強く、2nmノードの極微細な計測でも安定。</li>
-                        <li><b>完全クリーン:</b> 水と油の密封構造。摩耗パーツがないため、半永久的に精度を維持。</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="semicon-optical-strategy">
+    <style>
+        .semicon-optical-strategy {
+            background-color: #f8fafc;
+            padding: 60px 40px;
+            border-radius: 24px;
+            margin-top: 40px;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
 
-            <div style="margin-top: 60px; background: #f1f5f9; padding: 40px; border-radius: 20px; border-left: 8px solid var(--accent-gold);">
-                <h3>CMOS（可視光）では「見えない」ものが増えた</h3>
-                <p>半導体の微細化と3D積層は、光が回り込めない影や、表面からは見えない接合部を生み出しました。これからの検査は「見えているものを撮る」から「波長で透かして見る」ステージへ移行します。</p>
+        .strategy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .strategy-header h2 {
+            color: #073838;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .strategy-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #d4af37;
+            border-radius: 2px;
+        }
+
+        /* 3つの限界エリア */
+        .limit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .limit-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .limit-card h3 {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .limit-card .limit-tag {
+            color: #ef4444;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* 次世代戦略：液体レンズ */
+        .solution-box {
+            background: linear-gradient(135deg, #073838 0%, #0d4d4d 100%);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+        }
+
+        .solution-box h2 { color: #d4af37; margin-top: 0; }
+
+        .sol-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .sol-item h4 {
+            color: #d4af37;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* 比較テーブル */
+        .strategy-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .strategy-table th, .strategy-table td {
+            padding: 18px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .strategy-table th { background: #1e293b; color: #fff; font-size: 0.9rem; }
+        .strategy-table .col-label { background: #f1f5f9; font-weight: bold; width: 25%; }
+        .strategy-table .col-next { color: #059669; font-weight: bold; }
+
+        .strategy-summary {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .strategy-summary b { color: #073838; border-bottom: 2px solid #d4af37; }
+
+        @media (max-width: 768px) {
+            .sol-grid { grid-template-columns: 1fr; }
+            .strategy-table { font-size: 0.85rem; }
+        }
+    </style>
+
+    <div class="strategy-header">
+        <h2>従来のレンズが直面している「3つの限界」</h2>
+        <p>半導体の微細化に対し、物理的にレンズを動かす仕組みは限界を迎えています。</p>
+    </div>
+
+    <div class="limit-grid">
+        <div class="limit-card">
+            <h3><i class="fas fa-search-minus"></i> ① ピントの合う範囲が狭すぎる</h3>
+            <p>倍率を上げるとピントの合う「深さ」が紙一枚より薄くなります。</p>
+            <span class="limit-tag">【限界】数ミクロンの段差で回路がボケて見えない</span>
+        </div>
+        <div class="limit-card">
+            <h3><i class="fas fa-tachometer-alt"></i> ② 物理的な「移動速度」の限界</h3>
+            <p>モーターで重いガラスレンズを前後させるには物理的な時間が必要です。</p>
+            <span class="limit-tag">【限界】数千個のスキャンでは莫大なタイムロスに</span>
+        </div>
+        <div class="limit-card">
+            <h3><i class="fas fa-broom"></i> ③ 摩耗による「発塵」と寿命</h3>
+            <p>クリーンルーム内での摩擦は微細なゴミ（粉塵）の発生源となります。</p>
+            <span class="limit-tag">【限界】駆動部の摩耗が精度を狂わせ、歩留まりを下げる</span>
+        </div>
+    </div>
+
+    <div class="solution-box">
+        <h2>液体レンズによる「次世代光学戦略」</h2>
+        <div class="sol-grid">
+            <div class="sol-item">
+                <h4>爆速の多点スキャン</h4>
+                <p>電気を流すだけで液体の形（曲率）を一瞬で変化。瞬きよりも速いスピードでピントを切り替え、積層構造をスキャンします。</p>
+            </div>
+            <div class="sol-item">
+                <h4>究極の「動かない」安定性</h4>
+                <p>駆動部が一切ないため、ゴミが出ず、摩耗による寿命もありません。振動にも強く、ミリ単位以下の精度を保持し続けます。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="strategy-header">
+        <h2>「見えないもの」を捉える組み合わせ</h2>
+    </div>
+
+    <table class="strategy-table">
+        <thead>
+            <tr>
+                <th>課題</th>
+                <th>従来の組み合わせ</th>
+                <th class="col-next">次世代の戦略</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-label">回路の重なり</td>
+                <td>ピント合わせに時間がかかる</td>
+                <td class="col-next">液体レンズで全層を瞬時にスキャン</td>
+            </tr>
+            <tr>
+                <td class="col-label">シリコンの裏側</td>
+                <td>可視光では反射して見えない</td>
+                <td class="col-next">SWIR（赤外線）でシリコンを透かす</td>
+            </tr>
+            <tr>
+                <td class="col-label">微細な歪み</td>
+                <td>メカの振動でボケる</td>
+                <td class="col-next">固定された液体レンズで精密撮像</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="strategy-summary">
+        <p>
+            まとめ：微細化には<b>「生物のような目」</b>が必要です。<br>
+            部品を動かす「機械の目」から、電気信号でしなやかに形を変える<b>「液体レンズ」</b>への移行は、<br>
+            微細化の限界を突破するための必然的な選択と言えます。
+        </p>
+    </div>
+</section>
+
+    <section style="padding: 0; background: #fff;">
+        <div class="container-fluid">
+            <div class="row" style="align-items: center;">
+                <div class="col-lg-4">
+                    <h2 class="slide-title">2nmノードが直面する致命的な壁</h2>
+                    <div class="tiled-box">
+                        <h3>回折限界と微細化のジレンマ</h3>
+                        <p>回路線幅が原子数数十個分に達する先端ノードでは、光の波長が解像度を制限する「回折限界」が最大の敵となります。</p>
+                    </div>
+                    <div class="tiled-box">
+                        <h3>3D構造とスループットの課題</h3>
+                        <p>HBMやチップレット等の3D積層により内部欠陥が隠蔽。これを高精度かつ高速にスキャンする能力が求められています。</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <img src="image_b9f4cf.png" alt="2nmノードの課題" style="width: 100%; height: auto; display: block; box-shadow: -15px 0 35px rgba(0,0,0,0.1);">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="sophisticated-green">
-        <div class="container">
-            <div class="slide-title">「波長」で透かし、「液体」で捉える</div>
-            
-            <div class="comp-table-wrapper" style="margin-top: 40px;">
-                <table class="comp-table" style="color: var(--text-dark);">
-                    <thead>
-                        <tr>
-                            <th>比較ポイント</th>
-                            <th>CMOS (可視光)</th>
-                            <th>赤外線 (SWIR/InGaAs)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="label-col">シリコン透過</td>
-                            <td>反射して表面しか見えない</td>
-                            <td><b>ガラスのように透かして内部が見える</b></td>
-                        </tr>
-                        <tr>
-                            <td class="label-col">役割</td>
-                            <td>「思い出・記録用」の目</td>
-                            <td><b>「異常・隠蔽部を見抜く」魔法の目</b></td>
-                        </tr>
-                        <tr>
-                            <td class="label-col">液体レンズ相性</td>
-                            <td>速度向上が主目的</td>
-                            <td><b>積層内部の高速多点スキャンに不可欠</b></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div style="margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                <div>
-                    <h3 style="color: var(--accent-gold);">2nmノードの「内部」へアクセスする</h3>
-                    <p>LYNREDのSWIR（短波長赤外線）センサーとVariopticの液体レンズを組み合わせることで、従来の光学系では不可能だった「シリコンを透かし、積層された全階層に一瞬でピントを合わせる」という次世代の検査フローを実現します。</p>
-                </div>
-                <div style="border-radius: 20px; overflow: hidden; border: 2px solid var(--accent-gold);">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="padding: 60px 0; text-align: center; background: #021111; color: #fff;">
-        <img src="logo.png" alt="CHRONIX" style="height: 40px; filter: brightness(1.5);">
-        <p style="margin-top: 20px; font-size: 0.9rem; color: #64748b;">© 2026 CHRONIX & LYNRED. 全層検査のボトルネックを解消します。</p>
-    </footer>
-
-</body>
-</html>
     <section>
         <div class="container">
             <h2 class="slide-title">液体レンズ：物理的構造と動作原理</h2>
